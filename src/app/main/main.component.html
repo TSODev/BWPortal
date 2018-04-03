@@ -1,0 +1,367 @@
+<header id="header-2" class="soft-scroll header-2">
+  <nav class="main-nav navbar navbar-default navbar-fixed-top">
+      <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a>
+                  <img src="assets/images/brand/logo-engie.png" class="brand-img img-responsive">
+              </a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                  <li class="nav-item active">
+                      <a>Home</a>
+                  </li>
+                  <li class="nav-item">
+                  </li>
+                  <li class="nav-item">
+                  </li>
+                  <li class="nav-item">
+                      <a>Contact</a>
+                  </li>
+              </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+  </nav>
+</header>
+<section id="content-2-10" class="content-2-10 content-block">
+        <div class="container bg-white border-box">
+        </div>
+</section>
+<section id="content-3-10" class="content-block-nopad content-3-10">
+            <div class="image-container col-sm-6 col-xs-12 pull-left">
+                <div class="background-image-holder">
+        </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-6 col-xs-12 content">
+                        <h3>General Data Protection Regulation</h3>
+                        <p>The EU General Data Protection Regulation (GDPR) replaces the Data Protection Directive 95/46/EC and was designed to harmonize data privacy laws across Europe, to protect and empower all EU citizens data privacy and to reshape the way organizations across the region approach data privacy.</p>
+                    </div>
+                </div>
+                <!-- /.row-->
+            </div>
+            <!-- /.container -->
+</section>
+<!-- <section id="content-2-7" class="content-block content-2-7">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="underlined-title">
+                    <h1>Some fun facts & figures</h1>
+                    <hr>
+                    <h2>You'll <span class="fa fa-heart pomegranate"></span> Business Workflow</h2>
+                </div>
+            </div>
+            <div class="col-sm-3 text-center">
+                <div class="counter-icon">
+                    <span class="fa fa-magic"></span>
+                </div>
+                <div class="counter-text">
+                    <h3 class="counter">636</h3>
+                    <span>Monsters created</span>
+                </div>
+            </div>
+            <div class="col-sm-3 text-center">
+                <div class="counter-icon">
+                    <span class="fa fa-coffee"></span>
+                </div>
+                <div class="counter-text">
+                    <h3 class="counter">1349</h3>
+                    <span>Cups of English Tea</span>
+                </div>
+            </div>
+            <div class="col-sm-3 text-center">
+                <div class="counter-icon">
+                    <span class="fa fa-lightbulb-o"></span>
+                </div>
+                <div class="counter-text">
+                    <h3 class="counter">2496</h3>
+                    <span>Ideas generated</span>
+                </div>
+            </div>
+            <div class="col-sm-3 text-center">
+                <div class="counter-icon">
+                    <span class="fa fa-clock-o"></span>
+                </div>
+                <div class="counter-text">
+                    <h3 class="counter">4694</h3>
+                    <span>Hours spent working</span>
+                </div>
+            </div>
+            <div class="col-sm-12 text-center pad45">
+                <strong class="white">No dancing kittens were harmed in the process of making <a href="http://example.com">Business Workflow.</a></strong>
+            </div>
+        </div>
+    </div>
+</section> -->
+<section id="promo-2" class="content-block promo-2 min-height-600px bg-deepocean bg-image-cover">
+  <div class="container">
+      <div class="coming-soon text-center">
+          <h1>What are you waiting for?</h1>
+          <h2>Time until GDPR enforcement.</h2>
+          <div class="row countDown">
+              <div class="countDown-wrap">
+                  <span class="digits">{{ nbday }}</span>
+                  <div class="digits-label">days</div>
+              </div>
+              <div class="countDown-wrap">
+                  <span class="digits">{{ nbhour | number: '2.0-0' }}</span>
+                  <div class="digits-label">hours</div>
+              </div>
+              <div class="countDown-wrap">
+                  <span class="digits">{{ nbminute | number: '2.0-0' }}</span>
+                  <div class="digits-label">minutes</div>
+              </div>
+              <div class="countDown-wrap">
+                  <span class="digits">{{ nbsecond | number: '2.0-0' }}</span>
+                  <div class="digits-label">seconds</div>
+              </div>
+          </div>
+          <!-- /.row / counter -->
+      </div>
+      <!-- /.coming-soon -->
+  </div>
+  <!-- /.container -->
+</section>
+<section id="content-3-5" class="content-block content-3-5">
+    <div class="container">
+        <div class="row">
+            <!-- Feature Box 1 -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="feature-box" (click)= "staticModal1.show()">
+                    <div class="icon">
+                        <span class="fa fa-user"></span>
+                    </div>
+                    <h3>Subject Access Request</h3>
+                    <p>You need something realted to your personal data record, use this request.</p>
+                </div>
+            </div>
+            <!-- Feature Box 2 -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="feature-box"(click)= "staticModal2.show()">
+                    <div class="icon">
+                        <span class="fa fa-warning" ></span>
+                    </div>
+                    <h3>Report a Data Breach</h3>
+                    <p><br></p>
+                    <p>Use this to report a Data Breach in our GDPR Ticketing tool</p>
+                    <p></p>
+                </div>
+            </div>
+            <!-- Feature Box 3 -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="feature-box">
+                    <div class="icon">
+                        <span class="fa fa-legal"></span>
+                    </div>
+                    <h3>Contact Engie SA DPO</h3>
+                    <p><br></p>
+                    <p>Contact Engis SA DPO</p>
+                    <p></p>
+                </div>
+            </div>
+            <!-- Feature Box 4 -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="feature-box">
+                    <div class="icon">
+                        <span class="fa fa-book"></span>
+                    </div>
+                    <h3>Engie DPO directory</h3>
+                    <p><br></p>
+                    <p>Access DPO Directory</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <!-- Row Ends -->
+    </div>
+    <!-- Container Ends -->
+</section>
+<section class="content-block-nopad bg-deepocean footer-wrap-1-1">
+  <div class="container footer-1-1">
+      <div class="row">
+          <div class="col-sm-5">
+              <img src="assets/images/brand/logo-bmc.png" class="brand-img img-responsive">
+              <h3><strong>BMC Business Workflow</strong></h3>
+              <p class="lead">Your <strong>GDPR</strong> Cases Management made easier .</p>
+          </div>
+          <div class="col-sm-6 col-sm-offset-1">
+              <div class="row">
+                  <div class="col-md-4">
+                      <h4>Shortcuts</h4>
+                      <ul>
+                          <li>
+                              <a>About us</a>
+                          </li>
+                          <li>
+                              <a>Services</a>
+                          </li>
+                          <li>
+                              <a>Portfolio</a>
+                          </li>
+                          <li routerLinkActive="active">
+                            <a routerLink="/config">Configuration</a>
+                          </li>
+                          <li>
+                              <a>Contact</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-md-4">
+                      <h4>Legal Stuff</h4>
+                      <ul>
+                          <li>
+                              <a>Privacy Policy</a>
+                          </li>
+                          <li>
+                              <a>Terms & Conditions</a>
+                          </li>
+                          <li>
+                              <a>Cookie Policy</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <!-- <div class="col-md-4">
+                      <h4>Need GDPR Assistance ?</h4>
+                      <a class="btn btn-block btn-primary"
+                        (click)= "staticModal.show()">REQUEST</a>
+                  </div> -->
+              </div>
+          </div>
+      </div>
+      <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</section>
+
+<div class="modal fade" bsModal #staticModal1="bs-modal" id="staticModal" tabindex="-1" role="dialog" aria-hidden="true"> 
+  <div class="modal-dialog"> 
+      <div class="modal-content"> 
+          <div class="modal-header"> 
+              <button (click)="staticModal1.hide()" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>                         
+
+              <h4 class="modal-title">Subject Access Request</h4> 
+          </div>                     
+
+          <app-modal-form 
+                [staticModal]="staticModal1"
+                [modalnum]= 1>
+            </app-modal-form>
+      </div>                 
+  </div>             
+</div>
+
+<div class="modal fade" bsModal #staticModal2="bs-modal" id="staticModal" tabindex="-1" role="dialog" aria-hidden="true"> 
+    <div class="modal-dialog"> 
+        <div class="modal-content"> 
+            <div class="modal-header"> 
+                <button (click)="staticModal2.hide()" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>                         
+  
+                <h4 class="modal-title">Report a Data Breach</h4> 
+            </div>                     
+  
+            <app-modal-form 
+                  [staticModal]="staticModal2"
+                  [modalnum]= 2>
+              </app-modal-form>
+        </div>                 
+    </div>             
+  </div>
+  
+
+<div class="modal fade" bsModal #configModal="bs-modal" id="configModal" tabindex="-1" role="dialog" aria-hidden="true"> 
+        <div class="modal-dialog"> 
+            <div class="modal-content"> 
+                <div class="modal-header">
+                    <button (click)="configModal.hide()" type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>                 
+                    <h4 class="modal-title">Business Workflow connector</h4>
+                </div>             
+    
+                <div class="modal-body">
+                    <form #configForm="ngForm" role="form" name=configForm> 
+                        <div class="form-group modalformentry">
+                            <label class="control-label" for="bwurl">BMC Business Workflow Server Information</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="bwurl" 
+                                required
+                                name="bwurl"
+                                placeholder="Full Business Workflow Address">
+                        </div>
+                        <div class="form-group modalformentry"> 
+                            <label class="control-label" for="username">User</label>
+                            <input type="text" 
+                                class="form-control" 
+                                id="username"
+                                name="username"
+                                required
+                                 placeholder="Admin username">
+                        </div>                     
+                        <div class="form-group modalformentry"> 
+                            <label class="control-label" for="password">Password</label>                         
+                            <input type="password"
+                                 class="form-control" 
+                                 id="password"
+                                 name="password"
+                                 placeholder="Password"> 
+                        </div> 
+                        <div class="form-group modalformentry">
+                            <label class="control-label" for="bwurl">Digital Workplace Information</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="dwpurl" 
+                                required
+                                name="dwpurl"
+                                placeholder="Digital Workplace">
+                        </div>
+                        <div class="form-group modalformentry"> 
+                            <label class="control-label" for="username">User</label>
+                            <input type="text" 
+                                class="form-control" 
+                                id="dwp_username"
+                                name="dwp_username"
+                                required
+                                 placeholder="Digital Workplace username">
+                        </div>                     
+                        <div class="form-group modalformentry"> 
+                            <label class="control-label" for="password">Password</label>                         
+                            <input type="password"
+                                 class="form-control" 
+                                 id="dwp_password"
+                                 name="dwp_password"
+                                 placeholder="Password"> 
+                        </div> 
+                        <div class="form-group modalformentry">
+                            <label class="control-label" for="bwurl">Internal communication url</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="internalurl" 
+                                required
+                                name="bwurl"
+                                placeholder="http://localhost:6000">
+                        </div>                    
+                    </form>
+                </div>             
+    
+                <div class="modal-footer"> 
+                    <button (click)="configModal.hide()" type="button" class="btn btn-default" data-dismiss="modal">Close</button>                 
+    
+                    <button (click)="saveConfig(configForm)" type="button" class="btn btn-primary">Save changes</button>                 
+                </div>             
+            </div>         
+        </div>     
+    </div>

@@ -1,0 +1,212 @@
+<section id="content-3-1" class="content-block-nopad content-3-1">
+    <div class="panel-group" id="panels1"> 
+        <div class="panel panel-default"> 
+             <div class="panel panel-default"> 
+                <div class="panel-heading"> 
+                    <h4 class="panel-title"> <a class="collapsed" data-toggle="collapse" data-parent="#panels1" (click)="onCollapseClick(3)"> 
+                                                       Internal Communication                                </a> </h4> 
+                </div>                 
+                <div id="collapse3" class="panel-collapse collapse" [class.in]="isCollapsed3"> 
+                     <div class="panel-body">
+                        <form #configForm3="ngForm" role="form" name=configForm3> 
+                                <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="input-group"> 
+                                                <span class="input-group-addon">
+                                                    <fa name="server" size="2x"></fa>
+                                                    <!-- <span class="fa fa-server fa-2x"></span> -->
+                                                </span>                
+                                                <input class="form-control text-left" 
+                                                        placeholder="Servername or IP Address"
+                                                        aria-describedby="ServerName or IP Addess" 
+                                                        required 
+                                                        type="text" 
+                                                        id="int-servername" 
+                                                        name="int-servername"
+                                                        [(ngModel)]="internalservername"> 
+                                            </div>                  
+                                        </div>
+                                        <div class="col-md-3 col-sm-3">
+                                            <div class="input-group"> 
+                                                <span class="input-group-addon">Port</span> 
+                                                <input class="form-control" 
+                                                        placeholder="#" 
+                                                        aria-describedby="basic-addon1" 
+                                                        id="int-serverport" 
+                                                        [(ngModel)]="internalserverport"
+                                                        name='int-serverport'
+                                                        type="number"> 
+                                            </div>                  
+                                        </div>
+                                        <div class="col-md-2 col-sm-2">
+                                            <button (click)="onInternalClicked(configForm3)" 
+                                                    type="button" 
+                                                    class="btn btn-primary" 
+                                                    [disabled]="!configForm3.valid">Verify</button>                  
+                                        </div>
+                                        <div class="col-md-1 col-sm-1">
+                                            <div class="checkmark">
+                                                <fa *ngIf="internal_valid" class="checkvalid" name="check-circle" size="2x"></fa>
+                                                <fa *ngIf="!internal_valid" class="checkinvalid" name="times-circle" size="2x"></fa>
+                                            </div>                  
+                                        </div>
+                                    </div>                 
+                        </form> 
+                        <div class="comment">This part is used to communicate with BMC Server (CORS).</div>                                    
+                    </div>                     
+                </div>                 
+            </div>
+            <div class="panel-heading"> 
+                <h4 class="panel-title"> <a class="collapsed"  data-toggle="collapse" data-parent="#panels1" (click)="onCollapseClick(1)">
+                                                BMC Business Workflow Server                            </a> </h4> 
+            </div>                 
+            <div id="collapse1" class="panel-collapse collapse" [class.in]="isCollapsed1"> 
+                <div class="panel-body">  
+                        <form #configForm1="ngForm" role="form" name=configForm1> 
+                                <div class="form-group">
+                                    <label class="control-label" for="bwurl">BMC Business Workflow Server Information</label>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        id="bwurl" 
+                                        required
+                                        name="bwurl"
+                                        [(ngModel)]='bwpath'
+                                        placeholder="Full Business Workflow Address">
+                                </div>
+                                <div class="row">
+                                        <div class="col-md-5 col-sm-5">
+                                            <div class="input-group"> 
+                                                <span class="input-group-addon">
+                                                    <fa name="user" size="2x"></fa>
+                                                </span> 
+                                                
+                                                <input class="form-control text-left" 
+                                                    required 
+                                                    type="text" 
+                                                    data-html="false" 
+                                                    id="bw-adminuser" 
+                                                    [(ngModel)]='bwadminuser'
+                                                    name="bw-adminuser"
+                                                    placeholder="Administrator username" > 
+                                            </div>                  
+                                        </div>
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="input-group"> 
+                                                <span class="input-group-addon">
+                                                    <fa name="lock" size="2x"></fa>
+                                                </span> 
+                                                <input class="form-control"
+                                                        placeholder="Password" 
+                                                        aria-describedby="basic-addon1" 
+                                                        id="bw-adminpwd" 
+                                                        [(ngModel)]='bwadminpwd'
+                                                        name="bw-adminpwd"
+                                                        type="password" 
+                                                        required> 
+                                            </div>                  
+                                        </div>
+                                        <div class="col-md-2 col-sm-2">
+                                            <button type="button" 
+                                                    class="btn btn-primary" 
+                                                    (click)="onBWClicked(configForm1)" 
+                                                    [disabled]="!configForm3.valid">Verify</button>                  
+                                        </div>
+                                        <div class="col-md-1 col-sm-1">
+                                            <div class="checkmark">
+                                                <fa *ngIf="bw_valid" class="checkvalid" name="check-circle" size="2x"></fa>
+                                                <fa *ngIf="!bw_valid" class="checkinvalid" name="times-circle" size="2x"></fa>
+                                            </div>                  
+                                        </div>
+                                    </div>                    
+                            </form>
+                          
+                            <div class="comment">This part is used to authenticate on Business Workflow , Create and Manage Cases.</div>                 </div>                     
+            </div>                 
+        </div>             
+
+        <div class="panel panel-default"> 
+            <div class="panel-heading"> 
+                <h4 class="panel-title"> <a class="collapsed" data-toggle="collapse" data-parent="#panels1" (click)="onCollapseClick(2)">
+                                                    BMC Digital Workplace Server                                </a> </h4> 
+            </div>                 
+
+            <div id="collapse2" class="panel-collapse collapse" [class.in]="isCollapsed2"> 
+                <div class="panel-body">
+                        <form #configForm2="ngForm" role="form" name=configForm2> 
+                                <div class="form-group">
+                                        <label class="control-label" for="bwurl">Digital Workplace Server Information</label>
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            id="dwurl" 
+                                            required
+                                            name="dwurl"
+                                            placeholder="Digital Workplace ServerAddress">
+                                    </div>
+                                    <div class="row">
+                                            <div class="col-md-5 col-sm-5">
+                                                <div class="input-group"> 
+                                                    <span class="input-group-addon">
+                                                        <fa name="user" size="2x"></fa>
+                                                    </span> 
+                                                    
+                                                    <input class="form-control text-left" 
+                                                        placeholder="Username" 
+                                                        aria-describedby="basic-addon1" 
+                                                        required 
+                                                        type="text" 
+                                                        data-html="false" 
+                                                        id="dw-user" 
+                                                        name="dw-user"> 
+                                                </div>                  
+                                            </div>
+                                            <div class="col-md-4 col-sm-4">
+                                                <div class="input-group"> 
+                                                    <span class="input-group-addon">
+                                                        <fa name="lock" size="2x"></fa>
+                                                    </span> 
+                                                    <input class="form-control"
+                                                            placeholder="Password" 
+                                                            aria-describedby="basic-addon1" 
+                                                            id="dw-pwd" 
+                                                            type="password" 
+                                                            required> 
+                                                </div>                  
+                                            </div>
+                                            <div class="col-md-2 col-sm-2">
+                                                <button type="button" class="btn btn-primary" disabled="disabled">Verify</button>                  
+                                            </div>
+                                            <div class="col-md-1 col-sm-1">
+                                                <div class="checkmark">
+                                                    <fa *ngIf="dw_valid" class="checkvalid" name="check-circle" size="2x"></fa>
+                                                    <fa *ngIf="!dw_valid" class="checkinvalid" name="times-circle" size="2x"></fa>
+                                                </div>                  
+                                            </div>
+                                        </div>                  
+                        </form>                        
+                        <div class="comment">This part is used to authenticate on Digital Workplace , (Search).</div>                            </div>                     
+            </div>                 
+        </div>             
+        <div class="panel panel-default"> 
+                <div class="panel-heading"> 
+                    <h4 class="panel-title"> <a class="collapsed" data-toggle="collapse" data-parent="#panels1" (click)="onCollapseClick(4)"> 
+                                          Tenant and Foundation Data selection                                </a> </h4> 
+                </div>                 
+
+                <div id="collapse4" class="panel-collapse collapse" [class.in]="isCollapsed4"> 
+                    <div class="panel-body">  
+                            <select  class="form-control"> 
+                                    <option *ngFor="let company of companynames; let i = index">
+                                        {{ company }}
+                                    </option>        
+                                </select>                          
+                            <div class="comment">This part is used to select Foundation Data used by GDPR.</div>
+                    </div>                     
+                </div>                 
+            </div>             
+    </div>
+    <div class="container text-center">
+</div>
+    <!-- /.container -->
+</section>

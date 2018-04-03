@@ -1,0 +1,62 @@
+<form #modalForm="ngForm" role="form" name=modalForm> 
+  <div class="form-group modalformentry"> 
+      <label class="control-label" for="email">Email address</label>                             
+
+      <input type="email" 
+              class="form-control" 
+              placeholder="Enter email"
+              required
+              pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              [(ngModel)]="email" name="email">
+  </div> 
+
+
+  <div *ngIf="modalneedcategories"
+        class="form-group modalformentry"> 
+      <label class="control-label" for="category">Categories</label>                             
+      <select class="form-control" 
+              name="category" 
+              [(ngModel)]="category" 
+              required>
+        <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+      </select>
+  </div>
+
+  <div class="form-group modalformentry"> 
+      <label class="control-label" for="formInput74">Please describe your request</label>
+      <textarea 
+        class="form-control" 
+        placeholder="Please enter the description here"
+        required
+        [(ngModel)]="casedescription" name="casedescription"
+        rows="8"></textarea>
+  </div>                                                                                                    
+</form> 
+
+
+<div class="modal-footer"> 
+  <button type="button" class="btn btn-default" (click)="hideModal()">Close</button>   
+  <button type="button" class="btn btn-primary" (click)="CreateCase(modalForm)" [disabled]="!modalForm.valid">Create the Case</button>                         
+</div> 
+
+
+
+<div class="modal fade" bsModal #caseModal="bs-modal" id="caseModal" tabindex="-1" role="dialog" aria-hidden="true"> 
+    <div class="modal-dialog"> 
+        <div class="modal-content"> 
+            <div class="modal-header"> 
+                <button (click)="caseModal.hide()" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>                         
+  
+                <h4 class="modal-title">Your GDPR Case information</h4> 
+            </div>   
+            <div class="modal-body"> 
+                <h4>{{ casedisplayId }}</h4>
+                <h5>{{ casedescription }}</h5>
+            </div>                  
+            <div class="modal-footer"> 
+                    <button type="button" class="btn btn-default" (click)="caseModal.hide()">Close</button>                           
+            </div> 
+
+        </div>                 
+    </div>             
+</div>

@@ -1,0 +1,58 @@
+
+{ 
+ "title": "BWPortal",
+
+  "categories": [
+      {
+            "name": "GDPR - Information and Access Data",
+            "id": ""
+      }      ,
+      {
+            "name": "GDPR - Rectification and Erasure",
+            "id": ""
+      } ,
+      {
+            "name": "GDPR - Right to rectification",
+            "id": ""
+      } ,
+      {
+            "name": "GDPR - Right to erasure",
+            "id": ""
+      } ,
+      {
+            "name": "GDPR - Right to restriction of processing",
+            "id": ""
+      } ,
+      {
+            "name": "GDPR - Right to data portability",
+            "id": ""
+      } ,
+      {
+            "name": "GDPR - Right to object",
+            "id": ""
+      }          
+    ],
+
+    "url": "http://mobility219-bis.trybmc.com:80",
+    "username": "Hannah@petramco.com",
+    "password": "",
+    "internalservername": "localhost",
+    "internalserverport": "3000",
+
+
+  "Case_Requester": {
+                        "name": "WebAcess",
+                        "id": "AGGADG1AANVNMAPGBLKGPFEZ82UDUJ"
+                  },  
+
+  "Case_CompanyId": {
+                        "name": "Petramco",
+                        "id": "AG005056AC2B58tgEgTQRvVoBwQzAD"
+                        },
+
+  "Case_CatTier1": {
+                        "name": "GDPR",
+                        "id": "AGGADG1AANVNNAPFU533PEXT40ASF1"
+                  }
+
+}
