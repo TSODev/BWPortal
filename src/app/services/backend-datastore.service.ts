@@ -50,6 +50,18 @@ export class BackendDatastoreService {
     // .catch((error: any) => Observable.throw('Server Error'));
    }
 
+   postCasebyInterface(body: Object): Observable<Case> {
+    const inturl = 'http://' + this.common.getInternalServername() + ':' + this.common.getInternalServerPort();
+    return this.http.post(this.common.getInternalUrl() + '/api/interfacecase',
+      body,
+      {
+        reportProgress: true,
+        responseType: 'json'
+      })
+      .map(data => <Case>data);
+    // .catch((error: any) => Observable.throw('Server Error'));
+   }
+
 
   genericPost(body: Object): Observable<RecordInstance> {
     return this.http.post(this.common.getInternalUrl() + '/api/recordInstance/',

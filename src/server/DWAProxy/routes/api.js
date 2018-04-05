@@ -245,4 +245,45 @@ router.post('/case', function(req, res, next) {
   })
 });
 
+//-------------------------------------------------------
+
+router.post('/interfacecase', function(req, res, next) {
+  console.log("Post Case");
+  const url = localStorage.getItem('urlbase') + '/api/rx/application/command';
+  console.log(url);
+  const body = req.body;
+  console.log('body : ', body);
+  callAPIPost(url, body, function(e,response){
+    if (e === null){
+      if (response.status === 201){
+//        console.log(response);
+        console.log("Calling : ",response.headers.location);
+        callAPIGet(response.headers.location, function(e, result){
+          if (e === null) {
+            if (result.status === 200){
+              console.log("Result : ", result.text);
+              res.set(response.headers);
+              res.send(result.text);
+              res.status(response.status);
+              res.end();
+            }
+          } else {
+            console.log(e);
+          }
+        })
+//         res.set(response.headers);
+// //        res.send(response.text);        // Seems that response.text is empty with with call
+//         res.send(response.headers.location);
+//         res.status(response.status);
+//         res.end();
+      }
+    } else {
+      console.log(e);
+      res.send(e.Error);
+      res.status(500);
+      res.end()
+    }
+  })
+});
+
 module.exports = router;

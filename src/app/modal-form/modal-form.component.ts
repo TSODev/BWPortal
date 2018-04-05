@@ -134,6 +134,58 @@ export class ModalFormComponent implements OnInit {
   }
 
 
+  CreateCasebyInterface(modalForm: NgForm) {
+    if (this.modalnum === 2) {
+      this.category = modalForm.controls['category'].value;
+    }
+    this.backend.getToken(this.common.getUrl(), this.common.getUsername(), this.common.getPassword())
+    .subscribe(
+      (response: string) => {
+        // this.token = response;
+        // console.log(response);
+        console.log('Category : ', this.category);
+        this.backend.postCasebyInterface(
+          {
+            resourceType: 'com.bmc.arsys.rx.application.process.command.StartProcessInstanceCommand',
+            // tslint:disable-next-line:max-line-length
+            processDefinitionName: 'com.bmc.dsm.hrcm-lib:GDPR - Interface Create',                    // 'com.bmc.dsm-case-lib:GDPR - Interface Create',
+            processInputValues: {
+                Status: '2000',
+                Company: 'Petramco',
+                Description: this.email + ' has created the case from the web portal',
+                Requester: 'WebAccess',
+                Priority: '2000',
+                'Category Tier 1': 'GDPR',
+                'Category Tier 2': this.category,
+                Summary: this.casedescription,
+  //            'Case Template ID': 'CTPL-0000000101',
+                'Support Group': 'GDPR Support Group',
+                'Origin': 'Web Site',
+                'Service Request Display ID': '(external)',
+                'EndUser Email': this.email
+            }
+          }
+
+        ).subscribe(
+          (result: Case) => {
+            console.log('Case has been created : ', result);
+            this.casedisplayId = result.displayId;
+              this.staticModal.hide();
+//              this.caseModal.show();
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
+
+
 GenericCreateCase (modalForm: NgForm) {
     console.log(modalForm);
     console.log(this.caseModal);
