@@ -119,7 +119,7 @@ export class ModalFormComponent implements OnInit {
         ).subscribe(
           (result: Case) => {
             console.log('Case has been created : ', result);
-            this.casedisplayId = result.displayId;
+            this.caseId = result.displayId;
               this.staticModal.hide();
 //              this.caseModal.show();
           },
@@ -173,6 +173,7 @@ export class ModalFormComponent implements OnInit {
             this.caseId = result.processVariables.Case;
               this.staticModal.hide();
 //              this.caseModal.show();
+//
           },
           (error) => {
             console.log(error);

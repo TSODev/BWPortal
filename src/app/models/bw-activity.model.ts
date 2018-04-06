@@ -1,3 +1,4 @@
+
 export class BWActivity {
     constructor(
         public activityId: string,

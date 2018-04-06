@@ -1,3 +1,4 @@
+
 export class ProcessVariable {
     constructor (
         public Status: string,

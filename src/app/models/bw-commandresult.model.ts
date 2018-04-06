@@ -2,6 +2,7 @@
 import { ProcessVariable } from './bw-processvariable.model';
 import { BWActivity } from './bw-activity.model';
 
+
 export class CommandResult {
     constructor(
             public processDefinitionName: string,
