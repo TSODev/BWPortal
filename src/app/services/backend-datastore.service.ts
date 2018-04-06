@@ -8,6 +8,7 @@ import { Case } from '../models/case.model';
 import { RecordInstance } from '../models/bw-recordInstance.model';
 import { CommonService } from './common.service';
 import { DataPage } from '../models/bw-datapage.model';
+import { CommandResult } from '../models/bw-commandresult.model';
 
 
 
@@ -50,7 +51,7 @@ export class BackendDatastoreService {
     // .catch((error: any) => Observable.throw('Server Error'));
    }
 
-   postCasebyInterface(body: Object): Observable<Case> {
+   postCasebyInterface(body: Object): Observable<CommandResult> {
     const inturl = 'http://' + this.common.getInternalServername() + ':' + this.common.getInternalServerPort();
     return this.http.post(this.common.getInternalUrl() + '/api/interfacecase',
       body,
@@ -58,7 +59,7 @@ export class BackendDatastoreService {
         reportProgress: true,
         responseType: 'json'
       })
-      .map(data => <Case>data);
+      .map(data => <CommandResult>data);
     // .catch((error: any) => Observable.throw('Server Error'));
    }
 

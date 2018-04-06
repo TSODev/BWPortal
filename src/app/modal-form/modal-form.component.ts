@@ -7,6 +7,7 @@ import { NgForm } from '@angular/forms';
 import { Case } from '../models/case.model';
 import { RecordInstance } from '../models/bw-recordInstance.model';
 import { OperationalCompany } from '../models/bw-OperationalCompany.model';
+import { CommandResult } from '../models/bw-commandresult.model';
 
 @Component({
   selector: 'app-modal-form',
@@ -25,7 +26,7 @@ export class ModalFormComponent implements OnInit {
   token = '';
   category = 'GDPR - Rectification and Erasure';
 
-  casedisplayId = '';
+  caseId = '';
   modalneedcategories = true;
 
   Case_Requester = {
@@ -152,7 +153,7 @@ export class ModalFormComponent implements OnInit {
             processInputValues: {
                 Status: '2000',
                 Company: 'Petramco',
-                Description: this.email + ' has created the case from the web portal',
+                Description: this.casedescription,
                 Requester: 'WebAccess',
                 Priority: '2000',
                 'Category Tier 1': 'GDPR',
@@ -167,9 +168,9 @@ export class ModalFormComponent implements OnInit {
           }
 
         ).subscribe(
-          (result: Case) => {
+          (result: CommandResult) => {
             console.log('Case has been created : ', result);
-            this.casedisplayId = result.displayId;
+            this.caseId = result.processVariables.Case;
               this.staticModal.hide();
 //              this.caseModal.show();
           },
