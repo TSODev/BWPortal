@@ -2,7 +2,7 @@ export class ProcessVariable {
     constructor (
         public Status: string,
         public Origin: string,
-        public Case ID: string,
+        public CaseID: string,
         public Assignee: string,
         public Company: string,
         public Description: string,
@@ -19,7 +19,7 @@ export class ProcessVariable {
         public ServiceRequestDisplayID: string,
         public Summary: string,
         public StatusReason: string,
-        public ProcessInstanceErrors: string,
-    ){
+        public ProcessInstanceErrors: string
+    ) {
     }
 }

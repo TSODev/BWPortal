@@ -265,7 +265,7 @@ GenericCreateCase (modalForm: NgForm) {
         ).subscribe(
           (result: RecordInstance) => {
             console.log('Case has been created : ', result);
-            this.casedisplayId = result.displayId;
+//            this.casedisplayId = result.displayId;
               this.staticModal.hide();
 //              this.caseModal.show();
           },
